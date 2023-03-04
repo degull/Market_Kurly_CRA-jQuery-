@@ -1,6 +1,31 @@
 import React from "react";
 
 export default function Main1Component(){
+
+
+    //스크립트 생성함수
+    const scriptCreateElement=(src)=>{
+        const scriptElement = document.createElement('script');
+        scriptElement.setAttribute('id', 'script');
+        scriptElement.setAttribute('src','./js/main1_script.js');
+        document.body.appendChild(scriptElement);
+    }
+
+    //리액트 훅
+    React.useEffect(()=>{
+        scriptCreateElement('./js/main1_script.js');
+    },[]);
+
+    //생성된 요소 제거
+    React.useEffect(()=>{
+        let parentElement = document.getElementById('script').parentElement;
+        let childElement = document.getElementById('script');
+        parentElement.removeChild(childElement);
+    },[]);
+
+
+
+
     return(
         <main id="main" className="sub1">
             <section id="section1">
@@ -22,11 +47,11 @@ export default function Main1Component(){
                         <div className="left">
                         <div className="left-head">
                             <span>필터</span>
-                            <span><svg width="12" height="12" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.78 3.96303C12.504 2.16973 10.4086 1 8.04 1C4.15192 1 1 4.15192 1 8.04C1 11.9281 4.15192 15.08 8.04 15.08C11.9281 15.08 15.08 11.9281 15.08 8.04" stroke="#ddd" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="round"></path><path d="M14.4933 1L14.4933 4.52H10.9733" stroke="#ddd" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="round"></path></svg>초기화</span>
+                            <span><svg width="12" height="12" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.78 3.96303C12.504 2.16973 10.4086 1 8.04 1C4.15192 1 1 4.15192 1 8.04C1 11.9281 4.15192 15.08 8.04 15.08C11.9281 15.08 15.08 11.9281 15.08 8.04" stroke="#ddd" strokeWidth="1.6" stroke-linecap="square" stroke-linejoin="round"></path><path d="M14.4933 1L14.4933 4.52H10.9733" stroke="#ddd" strokeWidth="1.6" stroke-linecap="square" stroke-linejoin="round"></path></svg>초기화</span>
                         </div>
                         <ul>
                             <li>
-                                <a href="!#" className='category-btn' title='카테고리'><span>카테고리</span> <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#999" xmlns="http://www.w3.org/2000/svg" className="css-innaj4 e1frj59j6"><path d="M5 11L9 7L13 11" stroke="#999" stroke-width="1.2"></path></svg></a>
+                                <a href="!#" className='category-btn' title='카테고리'><span>카테고리</span> <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#999" xmlns="http://www.w3.org/2000/svg" className="css-innaj4 e1frj59j6"><path d="M5 11L9 7L13 11" stroke="#999" strokeWidth="1.2"></path></svg></a>
                                 <div className="sub sub1">
                                     <ul>
                                     <li><label for="sub1ChkBtn01"><input type="checkbox" id='sub1ChkBtn01' name='sub1_chk_btn_01' value='과일·견과·쌀'/>과일·견과·쌀</label></li>
@@ -41,12 +66,12 @@ export default function Main1Component(){
                                     <li><label for="sub1ChkBtn10"><input type="checkbox" id='sub1ChkBtn10' name='sub1_chk_btn_10' value='과일·견과·쌀'/>채소</label></li>                              
                                     </ul> 
                                     
-                                    <a href="!#" className='category-more-btn'>카테고리더보기 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#999" xmlns="http://www.w3.org/2000/svg" className="css-innaj4 e1frj59j6"><path d="M5 11L9 7L13 11" stroke="#999" stroke-width="1.2"></path></svg></a>
+                                    <a href="!#" className='category-more-btn'>카테고리더보기 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#999" xmlns="http://www.w3.org/2000/svg" className="css-innaj4 e1frj59j6"><path d="M5 11L9 7L13 11" stroke="#999" strokeWidth="1.2"></path></svg></a>
                                 </div>
                                 
                             </li>
                             <li>
-                                <a href="!#" className='category-btn'><span>브랜드</span> <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#999" xmlns="http://www.w3.org/2000/svg" className="css-innaj4 e1frj59j6"><path d="M5 11L9 7L13 11" stroke="#999" stroke-width="1.2"></path></svg></a>
+                                <a href="!#" className='category-btn'><span>브랜드</span> <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#999" xmlns="http://www.w3.org/2000/svg" className="css-innaj4 e1frj59j6"><path d="M5 11L9 7L13 11" stroke="#999" strokeWidth="1.2"></path></svg></a>
                                 <div className="sub sub2">
                                     <ul>
                                     <li><label for="sub2ChkBtn01"><input type="checkbox" id='sub2ChkBtn01' name='sub2_chk_btn_01' value='과일·견과·쌀'/>과일·견과·쌀</label></li>
@@ -60,12 +85,12 @@ export default function Main1Component(){
                                     <li><label for="sub2ChkBtn09"><input type="checkbox" id='sub2ChkBtn09' name='sub2_chk_btn_09' value='과일·견과·쌀'/>과일·견과·쌀</label></li>
                                     <li><label for="sub2ChkBtn10"><input type="checkbox" id='sub2ChkBtn10' name='sub2_chk_btn_10' value='과일·견과·쌀'/>과일·견과·쌀</label></li>                              
                                     </ul>                           
-                                    <a href="!#" className='category-more-btn'>카테고리더보기 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#999" xmlns="http://www.w3.org/2000/svg" className="css-innaj4 e1frj59j6"><path d="M5 11L9 7L13 11" stroke="#999" stroke-width="1.2"></path></svg></a>
+                                    <a href="!#" className='category-more-btn'>카테고리더보기 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#999" xmlns="http://www.w3.org/2000/svg" className="css-innaj4 e1frj59j6"><path d="M5 11L9 7L13 11" stroke="#999" strokeWidth="1.2"></path></svg></a>
                                 </div>
                                 
                             </li>
                             <li>
-                                <a href="!#" className='category-btn'><span>가격</span> <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#999" xmlns="http://www.w3.org/2000/svg" className="css-innaj4 e1frj59j6"><path d="M5 11L9 7L13 11" stroke="#999" stroke-width="1.2"></path></svg></a>
+                                <a href="!#" className='category-btn'><span>가격</span> <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#999" xmlns="http://www.w3.org/2000/svg" className="css-innaj4 e1frj59j6"><path d="M5 11L9 7L13 11" stroke="#999" strokeWidth="1.2"></path></svg></a>
                                 <div className="sub sub3">
                                     <ul>
                                     <li><label for="sub3ChkBtn01"><input type="checkbox" id='sub3ChkBtn01' name='sub3_chk_btn_01' value='과일·견과·쌀'/>과일·견과·쌀</label></li>
@@ -77,7 +102,7 @@ export default function Main1Component(){
 
                             </li>
                             <li>
-                                <a href="!#" className='category-btn'><span>혜택</span> <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#999" xmlns="http://www.w3.org/2000/svg" className="css-innaj4 e1frj59j6"><path d="M5 11L9 7L13 11" stroke="#999" stroke-width="1.2"></path></svg></a>
+                                <a href="!#" className='category-btn'><span>혜택</span> <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#999" xmlns="http://www.w3.org/2000/svg" className="css-innaj4 e1frj59j6"><path d="M5 11L9 7L13 11" stroke="#999" strokeWidth="1.2"></path></svg></a>
                                 <div className="sub sub4">
                                     <ul>
                                     <li><label for="sub4ChkBtn01"><input type="checkbox" id='sub4ChkBtn01' name='sub4_chk_btn_01' value='과일·견과·쌀'/>과일·견과·쌀</label></li>
@@ -87,7 +112,7 @@ export default function Main1Component(){
 
                             </li>
                             <li>
-                                <a href="!#" className='category-btn'><span>유형</span> <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#999" xmlns="http://www.w3.org/2000/svg" className="css-innaj4 e1frj59j6"><path d="M5 11L9 7L13 11" stroke="#999" stroke-width="1.2"></path></svg></a>
+                                <a href="!#" className='category-btn'><span>유형</span> <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#999" xmlns="http://www.w3.org/2000/svg" className="css-innaj4 e1frj59j6"><path d="M5 11L9 7L13 11" stroke="#999" strokeWidth="1.2"></path></svg></a>
                                 <div className="sub sub5">
                                     <ul>
                                         <li><label for="sub5ChkBtn01"><input type="checkbox" id='sub5ChkBtn01' name='sub5_chk_btn_01' value='과일·견과·쌀'/>과일·견과·쌀</label></li>

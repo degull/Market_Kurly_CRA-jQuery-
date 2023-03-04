@@ -1,5 +1,7 @@
 /* rsc */
 import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 import TopModalComponent from './wrap/TopModalComponent';
 import HeaderComponent from './wrap/HeaderComponent'
 import MainComponent from './wrap/MainComponent';
@@ -16,14 +18,22 @@ export default function WrapComponent(){
       <div id = "wrap">
       
          <TopModalComponent/>
-         <HeaderComponent/>
-         <MainComponent/>
+
+         <BrowserRouter>
+            <Routes>
+               <Route path='/' element={<HeaderComponent/>}>
+                  <Route index element={<MainComponent/>}></Route>
+                  <Route path='신상품' element={<Main1Component/>}></Route>
+                  <Route path='회원가입' element={<SignUpComponent/>}></Route>
+               </Route>
+            </Routes>
+         </BrowserRouter>
+       
          <FooterComponent/>
          <IntroModalComponent/>
          <QuickMenuComponent/>
          <GoTopComponent/>
-         <Main1Component/>       {/* 신상품  */}
-         <SignUpComponent/>      {/* 회원가입 */}
+         
 
       </div>
    );

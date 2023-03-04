@@ -1,6 +1,35 @@
 import React from 'react';
 
 export default function SignUpComponent(){
+
+
+    //스크립트 생성함수
+    const scriptCreateElement=(src)=>{
+      const scriptElement = document.createElement('script');
+      scriptElement.setAttribute('id', 'script');
+      scriptElement.setAttribute('src','./js/sign_Up.js');
+      document.body.appendChild(scriptElement);
+  }
+
+  //리액트 훅
+  React.useEffect(()=>{
+      scriptCreateElement('./js/sign_Up.js');
+  },[]);
+
+  //생성된 요소 제거
+  React.useEffect(()=>{
+      let parentElement = document.getElementById('script').parentElement;
+      let childElement = document.getElementById('script');
+      parentElement.removeChild(childElement);
+  },[]);
+
+
+
+ 
+
+
+
+
    return (
       <main id="mainSignUp" className="sign_up">
          <section id="signUpsection">

@@ -1,25 +1,26 @@
 import React from 'react';
+import {Link, Outlet} from 'react-router-dom';
 
 export default function HeaderComponent(){
    return (
-
-      <header id="header">
+      <>
+         <header id="header"> 
 
          <div className="row1">
             <div className="container">
                <ul>
-                  <li><a href="./member/sign_up">회원가입</a></li>
+                  <li><Link to="/회원가입">회원가입</Link></li>
                   <li><i>|</i></li>
                   <li><a href="./member/sign_login">로그인</a></li>
                   <li><i>|</i></li>
                   <li className="service-box">
-                     <a href="./member/board/board1" className="service-center-btn">고객센터<img src="./img/ico_down_16x10.png" alt=""/></a>
+                     <Link to="./member/board/board1" className="service-center-btn">고객센터<img src="./img/ico_down_16x10.png" alt=""/></Link>
                      <div className="top-tooltip">
                         <ul>
-                           <li><a href="./member/board/board1">공지사항</a></li>
-                           <li><a href="./member/board/board2">자주하는 질문</a></li>
-                           <li><a href="./member/board/board3">1:1문의</a></li>
-                           <li><a href="./member/board/board4">대량주문 문의</a></li>
+                           <li><Link to="/공지사항">공지사항</Link></li>
+                           <li><Link to="/자주하는 질문">자주하는 질문</Link></li>
+                           <li><Link to="/1:1문의">1:1문의</Link></li>
+                           <li><Link to="/대량주문 문의">대량주문 문의</Link></li>
                         </ul>
                      </div>
                   </li>
@@ -32,10 +33,10 @@ export default function HeaderComponent(){
                   <ul>
                      <li> 
                         <h1>
-                           <a href="./" title="마켓컬리">
+                           <Link to="./" title="마켓컬리">
                               <img src="./img/logo_kurly.svg" alt=""/>
                               <span>마켓컬리</span>   
-                           </a>
+                           </Link>
                         </h1>
                      </li>
                      <li> 
@@ -43,7 +44,7 @@ export default function HeaderComponent(){
                      </li>
                      <li> 
                         <span>
-                           <a href="!#" title="뷰티컬리">뷰티컬리 <img src="./img/n_red.svg" alt=""/></a>
+                           <Link to="/뷰티컬리" title="뷰티컬리">뷰티컬리 <img src="./img/n_red.svg" alt=""/></Link>
                         </span>
                      </li>
                   </ul>
@@ -91,10 +92,10 @@ export default function HeaderComponent(){
                </div>
                <div className="center">
                   <ul>
-                     <li><a href="./sub1/" className="main-btn on" title="신상품">신상품</a></li>
-                     <li><a href="./sub2/" className="main-btn" title="베스트">베스트</a></li>
-                     <li><a href="./sub3/" className="main-btn" title="알뜰쇼핑">알뜰쇼핑</a></li>
-                     <li><a href="./sub4/" className="main-btn" title="특가혜택">특가혜택</a></li>
+                     <li><Link to="./신상품" className="main-btn on" title="신상품">신상품</Link></li>
+                     <li><Link to="./베스트" className="main-btn" title="베스트">베스트</Link></li>
+                     <li><Link to="./알뜰쇼핑" className="main-btn" title="알뜰쇼핑">알뜰쇼핑</Link></li>
+                     <li><Link to="./특가/혜택택" className="main-btn" title="특가/혜택">특가/혜택</Link></li>
                   </ul>
                </div>
                <div className="right">
@@ -106,7 +107,10 @@ export default function HeaderComponent(){
                </div>
             </div>
          </div>
-   </header>
+         </header>
+         <Outlet/>
+      </>
+      
       
       
    );
