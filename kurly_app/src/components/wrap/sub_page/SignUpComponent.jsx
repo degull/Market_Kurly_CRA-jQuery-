@@ -2,6 +2,30 @@ import React from 'react';
 
 export default function SignUpComponent(){
 
+   // 1. 주소 저장소(세션스토리지)에서 검색된 주소 가져오기(getter)
+   // 2. 가져온 주소는 문자열 형태이다. JSON.stringify()로 변환된 문자열.
+   //    그래서 다시 객체형태로 변환하여 사용한다. JSON.parse(); 
+   // 3. 가져온 주소를 주소 입력상자에 각각 바인딩 시켜 주소를 유지시킨다. (setter)
+   // 4. 그러면 새로고침해도 지워지지 않는다.
+   // 5. 가져온 주소는 반드시 리액트 상태관리(statement)에 보관/관리한다. (setter)
+   // 6. 입력상자와 상태관리 속성과 연결한다.
+   
+   const getAddressSessionStorage=()=>{
+      const result = JSON.parse(sessionStorage.getItem('SHADDRESS'));
+
+      console.log(result.주소1);
+      console.log(result.주소2);
+   }
+
+   // 리액트 훅에서 함수를 호출
+   React.useEffect(()=>{
+      getAddressSessionStorage()
+   },[]);
+
+
+
+
+
 
     //스크립트 생성함수
     const scriptCreateElement=(src)=>{
@@ -103,21 +127,21 @@ export default function SignUpComponent(){
                         </div>
                      </li> 
 
-                     <li className="addr addr1">
+                     <li className="addr addr1 on">
                         <div>
                            <em>주소<i>*</i></em>
-                           <input type="text" name="" id="" placeholder="주소검색 API"/>
+                           <input type="text" name="addr1" id="addr1" placeholder="주소검색 API"/>
                            <button className="address-research-btn"><img src="./img/ico_search.svg" alt=""/>재검색</button>
                         </div>
                      </li> 
 
-                     <li className="addr addr2">
+                     <li className="addr addr2 on">
                         <div>
-                           <input type="text" name="" id="" placeholder="나머지 주소를 입력해주세요"/>
+                           <input type="text" name="addr2" id="addr2" placeholder="나머지 주소를 입력해주세요"/>
                         </div>
                      </li>
 
-                     <li className="addr addr3">
+                     <li className="addr addr3 on">
                         <div>
                            <em>주소<i>*</i></em>
                            <button className="address-search-btn"><img src="./img/ico_search.svg" alt=""/>주소검색</button>

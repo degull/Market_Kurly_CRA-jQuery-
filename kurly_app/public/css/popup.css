@@ -117,6 +117,26 @@ html body #wrap .container .gap .content > ul > li > div button.more-view-btn {
   height: auto;
   cursor: pointer;
 }
+html body #wrap .container .gap .content > ul > li > div button.more-view-btn .view-text:nth-child(1) {
+  display: block;
+}
+html body #wrap .container .gap .content > ul > li > div button.more-view-btn .view-text:nth-child(1).on {
+  display: none;
+}
+html body #wrap .container .gap .content > ul > li > div button.more-view-btn .view-text:nth-child(2) {
+  display: none;
+}
+html body #wrap .container .gap .content > ul > li > div button.more-view-btn .view-text:nth-child(2).on {
+  display: inline-block;
+}
+html body #wrap .container .gap .content > ul > li > div button.more-view-btn img {
+  width: 10px;
+  transform: translateY(-2px);
+  margin: 0 0 0 5px;
+}
+html body #wrap .container .gap .content > ul > li > div button.more-view-btn img.on {
+  transform: rotate(180deg);
+}
 html body #wrap .container .gap .content > ul > li > div p {
   font-size: 12px;
   color: #999;
@@ -129,14 +149,17 @@ html body #wrap .container .gap .content > ul > li > div h4 {
 }
 html body #wrap .container .gap .content > ul > li > div h5 {
   color: #333;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
 }
-html body #wrap .container .gap .content > ul > li > div div {
+html body #wrap .container .gap .content > ul > li > div .view-box {
   width: 100%;
   display: none;
 }
-html body #wrap .container .gap .content > ul > li > div div ul li {
+html body #wrap .container .gap .content > ul > li > div .view-box.on {
+  display: block;
+}
+html body #wrap .container .gap .content > ul > li > div .view-box ul li {
   color: #999;
   line-height: 150%;
   font-size: 12px;

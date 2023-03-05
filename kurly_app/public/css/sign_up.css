@@ -70,7 +70,7 @@
   display: block;
 }
 #wrap #mainSignUp .container .content form ul li.addr3.on {
-  display: none;
+  display: block;
 }
 #wrap #mainSignUp .container .content form ul li.addr3 .addr-search-btn {
   position: relative;

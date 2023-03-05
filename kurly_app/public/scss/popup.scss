@@ -104,7 +104,28 @@ html {
                                  border: 0;
                                  height: auto;
                                  cursor: pointer;
-                                 
+                                 .view-text {
+                                    &:nth-child(1) {
+                                       display: block;
+                                       &.on {
+                                          display: none;
+                                       }
+                                    }
+                                    &:nth-child(2) {
+                                       display: none;
+                                       &.on {
+                                          display: inline-block;
+                                       }
+                                    }
+                                 }
+                                 img {
+                                    width: 10px;
+                                    transform: translateY(-2px);
+                                    margin: 0 0 0 5px;
+                                    &.on {
+                                       transform: rotate(180deg);
+                                    }
+                                 }
 
                               }
                            }
@@ -120,12 +141,15 @@ html {
                            }
                            h5 {
                               color: #333;
-                              font-size: 14px;
+                              font-size: 13px;
                               font-weight: 500;
                            }
-                           div {
+                           .view-box {
                               width: 100%;
                               display: none;
+                              &.on {
+                                 display: block;
+                              }
                               ul {
                                  li {
                                     color: #999;
